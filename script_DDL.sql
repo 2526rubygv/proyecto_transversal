@@ -1,1 +1,1 @@
-scrip 
+scripddl
