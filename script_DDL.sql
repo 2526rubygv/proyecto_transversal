@@ -6,3 +6,13 @@ contacte VARCHAR (50)
 ubicació VARCHAR (80) 
 modalitat_practica VARCHAR (50)
 );
+
+CREATE TABLE CV (
+id_cv INT PRIMARY KEY ,
+data_creacio DATE ,
+actualitzacio DATE ,
+enllac VARCHAR (200) ,
+estat_cv VARCHAR (30) ,
+id_alumne INT ,
+FOREIGN KEY (id_alumne) REFERENCES alumne (id_alumne)    
+);
