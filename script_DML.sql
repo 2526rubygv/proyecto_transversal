@@ -1,5 +1,5 @@
 -- creació de empreses per la BBDD
-INSERT INTO empresa (nom, sector, contacte, ubicacio, modalitat_practica) VALUES 
+INSERT INTO empresa (id_empresa, nom, sector, contacte, ubicacio, modalitat_practica) VALUES 
 ('Capgemini', 'Consultoría tecnológica y servicios IT', 'María López', 'Barcelona', 'ambdues'),
 ('Apple', 'Tecnología de consumo y hardware/software', 'Carlos García', 'Barcelona', 'intensiva'),
 ('SAP', 'Software empresarial (ERP y análisis de datos)', 'Ana Martínez', 'Barcelona', 'general'),
@@ -12,13 +12,13 @@ INSERT INTO empresa (nom, sector, contacte, ubicacio, modalitat_practica) VALUES
 ('Terracom', 'Desarrollo de software a medida', 'Luis Hernández', 'Barcelona', 'ambdues');
 
 --creació de cicles
-INSERT INTO cicle (nom_cicle, promocio) VALUES
+INSERT INTO cicle (id_cicle, nom_cicle, promocio) VALUES
 ('DAM', '2023'),
 ('DAW', '2021'),
 ('ASIR', '2020');
 
 --creació d'alumnes per la BBDD
-INSERT INTO alumne (nom, cognom, dni, nass, telefono, estat_alumne, ra2_ipo, data_inici, data_fi, tutor_empresa, estat_assignada, id_empresa) VALUES
+INSERT INTO alumne (id_alumne, nom, cognom, dni, nass, telefono, estat_alumne, ra2_ipo, data_inici, data_fi, tutor_empresa, estat_assignada, id_empresa) VALUES
 ('Raúl', 'Garcia', '12345678A', '612345678901', '612 345 678', 'actiu', 'aprovat', '2023-01-15', '2023-06-15', 'María López', 'assignada', 1),
 ('Nicolas', 'Gonzalez', '23456789B', '613456789012', '613 456 789', 'inactiu', 'no aprovat', '2021-02-01', '2021-07-01', 'Carlos García', 'no assignada', 2),
 ('Javi', 'Rodriguez', '34567890C', '614567890123', '614 567 890', 'actiu', 'aprovat', '2020-03-10', '2020-08-10', 'Ana Martínez', 'assignada', 3),
@@ -41,7 +41,7 @@ INSERT INTO alumne (nom, cognom, dni, nass, telefono, estat_alumne, ra2_ipo, dat
 ('Estel', 'Valls', '10101010V', '631234567890', '631 234 567', 'inactiu', 'no aprovat', '2021-08-15', '2022-01-15', 'Luis Hernández', 'no assignada', 10);
 
 --creació exemples d'avaluació
-INSERT INTO avaluacio (observacio, treball_equip, autonomia, comunicacio, puntualitat, nivell_tecnic, puntuacio, actitud) VALUES
+INSERT INTO avaluacio (id_avaluacio, observacio, treball_equip, autonomia, comunicacio, puntualitat, nivell_tecnic, puntuacio, actitud) VALUES
 ('Bona participació en equip', 8, 7, 9, 10, 8, 8, 9),
 ('Millorable en autonomia', 6, 5, 7, 8, 6, 7, 7),
 ('Excel·lent comunicació', 9, 8, 10, 9, 9, 9, 10),
@@ -51,19 +51,8 @@ INSERT INTO avaluacio (observacio, treball_equip, autonomia, comunicacio, puntua
 ('Treball en equip correcte', 7, 6, 7, 7, 7, 7, 8),
 ('Pot millorar en puntualitat', 6, 7, 6, 6, 6, 6, 7);
 
---creació exemples de matriculat
-INSERT INTO matriculat (id_avaluacio, id_alumne, id_cicle) VALUES
-(1, 1, 1),
-(2, 2, 2),
-(3, 3, 3),
-(4, 4, 1),
-(5, 5, 2),
-(6, 6, 3),
-(7, 7, 1),
-(8, 8, 2);
-
 --creació exemples d'enviament
-INSERT INTO enviament (data_enviament, estat, notes, id_cv, id_empresa) VALUES
+INSERT INTO enviament (id_enviament, data_enviament, estat, notes, id_cv, id_empresa) VALUES
 ('2023-01-10', 'enviat', 'Primer contacte amb l\'empresa', 1, 1),
 ('2023-01-15', 'vist', 'El CV ha estat vist', 2, 2),
 ('2023-02-01', 'entrevista', 'Convocat a entrevista', 3, 3),
