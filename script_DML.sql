@@ -2,9 +2,9 @@
 INSERT INTO empresa (nom, sector, contacte, ubicacio, modalitat_practica) VALUES 
 ('Capgemini', 'Consultoria tecnologica y servicios IT', 'Maria Lopez', 'Barcelona', 'ambdues'),
 ('Apple', 'Tecnologia de consumo y hardware/software', 'Carlos Garcia', 'Barcelona', 'intensiva'),
-('SAP', 'Software empresarial (ERP y analisis de datos)', 'Ana Martinez', 'Barcelona', 'general'),
+('SAP', 'Software empresarial', 'Ana Martinez', 'Barcelona', 'general'),
 ('BCN22', 'Desarrollo de software, IA y servicios en la nube', 'Jose Fernandez', 'Barcelona', 'ambdues'),
-('HP', 'ICloud', 'Laura Sanchez', 'Barcelona', 'general'),
+('HP', 'Cloud', 'Laura Sanchez', 'Barcelona', 'general'),
 ('Q2BSTUDIO', 'I+D', 'David Rodriguez', 'Barcelona', 'intensiva'),
 ('Accenture', 'Outsourcing', 'Marta Perez', 'Barcelona', 'ambdues'),
 ('AWS', 'Cloud', 'Juan Gomez', 'Barcelona', 'general'),
@@ -53,26 +53,26 @@ INSERT INTO alumne (nom, cognom, dni, nass, telefono, estat_alumne, ra2_ipo, dat
 
 --creacio exemples d'cv
 INSERT INTO CV (data_creacio, actualitzacio, enllac, estat_cv, id_alumne) VALUES
-('2023-01-10', '2023-02-15', 'https://itic-bcn.cat/cv/raul_garcia.pdf', 'completat', 21),
-('2023-03-22', '2023-03-25', 'https://itic-bcn.cat/cv/nicolas_gonzalez.pdf', 'pendent', 22),
-('2023-05-05', '2023-06-10', 'https://itic-bcn.cat/cv/javi_rodriguez.pdf', 'completat', 23),
-('2023-08-14', '2023-09-01', 'https://itic-bcn.cat/cv/dmitry_vlad.pdf', 'completat', 24),
-('2023-11-30', '2023-12-05', 'https://itic-bcn.cat/cv/mathieu_mont.pdf', 'revisió', 25),
-('2024-01-15', '2024-01-20', 'https://itic-bcn.cat/cv/tom_johnson.pdf', 'pendent', 26),
-('2024-02-10', '2024-03-12', 'https://itic-bcn.cat/cv/pietra_milano.pdf', 'completat', 27),
-('2024-04-01', '2024-04-05', 'https://itic-bcn.cat/cv/lorena_mar.pdf', 'revisió', 28),
-('2024-05-20', '2024-06-15', 'https://itic-bcn.cat/cv/lucia_martinez.pdf', 'completat', 29),
-('2024-07-08', '2024-07-10', 'https://itic-bcn.cat/cv/araceli_novo.pdf', 'pendent', 30),
-('2024-09-12', '2024-10-01', 'https://itic-bcn.cat/cv/pietro_marco.pdf', 'completat', 31),
-('2024-10-25', '2024-11-05', 'https://itic-bcn.cat/cv/dorian_mars.pdf', 'completat', 36),
-('2024-12-01', '2024-12-10', 'https://itic-bcn.cat/cv/mikaela_prince.pdf', 'revisió', 37),
-('2025-01-05', '2025-01-07', 'https://itic-bcn.cat/cv/beatriz_ortiz.pdf', 'pendent', 38),
-('2023-04-18', '2023-05-20', 'https://itic-bcn.cat/cv/lua_papas.pdf', 'completat', 39),
-('2023-09-29', '2023-10-15', 'https://itic-bcn.cat/cv/marc_canigo.pdf', 'completat', 40),
-('2024-03-14', '2024-03-20', 'https://itic-bcn.cat/cv/carles_soler.pdf', 'revisió', 41),
-('2024-06-22', '2024-07-01', 'https://itic-bcn.cat/cv/genis_pujol.pdf', 'pendent', 42),
-('2024-08-19', '2024-09-05', 'https://itic-bcn.cat/cv/xenia_cap.pdf', 'completat', 43),
-('2025-01-20', '2025-02-01', 'https://itic-bcn.cat/cv/estel_valls.pdf', 'completat', 42);
+('2023-01-10', '2023-02-15', 'https://drive.google.com/drive/cv/raul_garcia.pdf', 'completat', 21),
+('2023-03-22', '2023-03-25', 'https://drive.google.com/drive/cv/nicolas_gonzalez.pdf', 'pendent', 22),
+('2023-05-05', '2023-06-10', 'https://drive.google.com/drive/cv/javi_rodriguez.pdf', 'completat', 23),
+('2023-08-14', '2023-09-01', 'https://drive.google.com/drive/cv/dmitry_vlad.pdf', 'completat', 24),
+('2023-11-30', '2023-12-05', 'https://drive.google.com/drive/cv/mathieu_mont.pdf', 'revisió', 25),
+('2024-01-15', '2024-01-20', 'https://drive.google.com/drive/cv/tom_johnson.pdf', 'pendent', 26),
+('2024-02-10', '2024-03-12', 'https://drive.google.com/drive/cv/pietra_milano.pdf', 'completat', 27),
+('2024-04-01', '2024-04-05', 'https://drive.google.com/drive/cv/lorena_mar.pdf', 'revisió', 28),
+('2024-05-20', '2024-06-15', 'https://drive.google.com/drive/cv/lucia_martinez.pdf', 'completat', 29),
+('2024-07-08', '2024-07-10', 'https://drive.google.com/drive/cv/araceli_novo.pdf', 'pendent', 30),
+('2024-09-12', '2024-10-01', 'https://drive.google.com/drive/cv/pietro_marco.pdf', 'completat', 31),
+('2024-10-25', '2024-11-05', 'https://drive.google.com/drive/cv/dorian_mars.pdf', 'completat', 36),
+('2024-12-01', '2024-12-10', 'https://drive.google.com/drive/cv/mikaela_prince.pdf', 'revisió', 37),
+('2025-01-05', '2025-01-07', 'https://drive.google.com/drive/cv/beatriz_ortiz.pdf', 'pendent', 38),
+('2023-04-18', '2023-05-20', 'https://drive.google.com/drive/cv/lua_papas.pdf', 'completat', 39),
+('2023-09-29', '2023-10-15', 'https://drive.google.com/drive/cv/marc_canigo.pdf', 'completat', 40),
+('2024-03-14', '2024-03-20', 'https://drive.google.com/drive/cv/carles_soler.pdf', 'revisió', 41),
+('2024-06-22', '2024-07-01', 'https://drive.google.com/drive/cv/genis_pujol.pdf', 'pendent', 42),
+('2024-08-19', '2024-09-05', 'https://drive.google.com/drive/cv/xenia_cap.pdf', 'completat', 43),
+('2025-01-20', '2025-02-01', 'https://drive.google.com/drive/cv/estel_valls.pdf', 'completat', 42);
 
 --creacio exemples d'enviament
 INSERT INTO enviament (data_enviament, estat, notes, id_cv, id_empresa) VALUES
@@ -161,7 +161,7 @@ AND estat = 'entrevista';
 
 --ejemplo 3 modificar la tabla de cv, inserir, actualizar y eliminar
 INSERT INTO cv (data_creacio, actualitzacio, enllac, estat_cv, id_alumne)
-VALUES ('2025-01-20', NULL, 'https://itic-bcn.cat/cv/raul_update.pdf', 'pendent', 21);
+VALUES ('2025-01-20', NULL, 'https://drive.google.com/drive/cv/raul_update.pdf', 'pendent', 21);
 
 UPDATE cv
 SET estat_cv = 'completat', actualitzacio = '2025-01-25'

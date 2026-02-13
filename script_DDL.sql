@@ -4,13 +4,13 @@
 
 --Creació de la Taula
 CREATE TABLE cicle ( 
-id_cicle SERIAL PRIMARY KEY,
+id_cicle SMALLINT PRIMARY KEY,
 nom_cicle VARCHAR (50) NOT NULL ,
 promocio VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE empresa (
-id_empresa SERIAL PRIMARY KEY ,
+id_empresa SMALLINT PRIMARY KEY ,
 nom VARCHAR (50) NOT NULL,
 sector VARCHAR (50),
 contacte VARCHAR (50) ,
@@ -20,7 +20,7 @@ modalitat_practica VARCHAR (50) CHECK (modalitat_practica IN ('intensiva','gener
 --Informació sobre cada empresa i la seva modalitat.
 
 CREATE TABLE avaluacio ( 
-id_avaluacio SERIAL PRIMARY KEY,
+id_avaluacio SMALLINT PRIMARY KEY,
 observacio TEXT,
 treball_equip INT CHECK (treball_equip BETWEEN 0 AND 10),
 autonomia INT CHECK (autonomia BETWEEN 0 AND 10),
@@ -34,10 +34,10 @@ actitud INT CHECK (actitud BETWEEN 0 AND 10)
 -- Sistema de rúbrica (0-10) per a l'avaluació de competències tècniques.
 
 CREATE TABLE alumne ( 
-id_alumne SERIAL PRIMARY KEY,
-nom VARCHAR(50) NOT NULL,
-cognom VARCHAR(50) NOT NULL,
-dni VARCHAR(9) NOT NULL UNIQUE CHECK (dni ~ '^([0-9]{8}[A-Z])$'),
+id_alumne SMALLINT PRIMARY KEY,
+nom VARCHAR(100) NOT NULL,
+cognom VARCHAR(100) NOT NULL,
+dni VARCHAR(20) NOT NULL UNIQUE CHECK (dni ~ '^([0-9]{8}[A-Z])$'),
 nass VARCHAR (12) NOT NULL UNIQUE CHECK (nass ~ '^([0-9]{12})$'), 
 telefono VARCHAR(50),
 estat_alumne VARCHAR(50) CHECK (estat_alumne IN ('actiu','inactiu')),
@@ -63,7 +63,7 @@ CONSTRAINT id_cicle_fk FOREIGN KEY (id_cicle) REFERENCES cicle(id_cicle)
 -- Taula de relació per manejar les diferents inscripcions d'un estudiant a diversos cicles i les seves qualificacions.
 
 CREATE TABLE CV (
-id_cv SERIAL PRIMARY KEY ,
+id_cv SMALLINT PRIMARY KEY ,
 data_creacio DATE NOT NULL ,
 actualitzacio DATE ,
 enllac VARCHAR (200) ,
@@ -73,7 +73,7 @@ CONSTRAINT alumne_id_alumne_fk FOREIGN KEY (id_alumne) REFERENCES alumne(id_alum
 );
 
 CREATE TABLE enviament (
-id_enviament SERIAL PRIMARY KEY ,
+id_enviament SMALLINT PRIMARY KEY ,
 data_enviament DATE NOT NULL,
 estat VARCHAR (30)CHECK (estat IN ('enviat','vist','entrevista','rebutjat','acceptat')),
 notes TEXT ,
