@@ -45,16 +45,16 @@ ra2_ipo VARCHAR (30) CHECK (ra2_ipo IN ('aprovat', 'no aprovat')),
 data_inici DATE ,
 data_fi DATE ,
 tutor_empresa VARCHAR (100) ,
-estat_assignada VARCHAR (40) ,
-id_empresa INT ,
+estat_assignada VARCHAR (40) CHECK (estat_assignada IN ('assignada','no assignada')),
+id_empresa SMALLINT ,
 CONSTRAINT empresa_id_empresa_fk FOREIGN KEY (id_empresa) REFERENCES empresa(id_empresa)
 );
 --Taula d'informació de l'alumne.
 
 CREATE TABLE matriculat (
-id_avaluacio INT ,
-id_alumne INT ,
-id_cicle INT ,
+id_avaluacio SMALLINT ,
+id_alumne SMALLINT ,
+id_cicle SMALLINT ,
 PRIMARY KEY (id_alumne, id_cicle, id_avaluacio),
 CONSTRAINT id_avaluacio_fk FOREIGN KEY (id_avaluacio) REFERENCES avaluacio(id_avaluacio),
 CONSTRAINT id_alumne_fk FOREIGN KEY (id_alumne) REFERENCES alumne(id_alumne) ON DELETE CASCADE,
@@ -67,8 +67,8 @@ id_cv SMALLINT PRIMARY KEY ,
 data_creacio DATE NOT NULL ,
 actualitzacio DATE ,
 enllac VARCHAR (200) ,
-estat_cv VARCHAR (30) ,
-id_alumne INT NOT NULL ,
+estat_cv VARCHAR (30) CHECK (estat_cv IN ('completat','pendent','revisio')),
+id_alumne SMALLINT NOT NULL ,
 CONSTRAINT alumne_id_alumne_fk FOREIGN KEY (id_alumne) REFERENCES alumne(id_alumne) ON DELETE CASCADE 
 );
 
@@ -77,8 +77,8 @@ id_enviament SMALLINT PRIMARY KEY ,
 data_enviament DATE NOT NULL,
 estat VARCHAR (30)CHECK (estat IN ('enviat','vist','entrevista','rebutjat','acceptat')),
 notes TEXT ,
-id_cv INT NOT NULL ,
-id_empresa INT NOT NULL ,
+id_cv SMALLINT NOT NULL ,
+id_empresa SMALLINT NOT NULL ,
 CONSTRAINT cv_env_fk FOREIGN KEY (id_cv) REFERENCES cv(id_cv)ON DELETE CASCADE,
 CONSTRAINT empresa_env_fk FOREIGN KEY (id_empresa) REFERENCES empresa(id_empresa) ON DELETE CASCADE 
 );
