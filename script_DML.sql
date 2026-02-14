@@ -107,7 +107,7 @@ INSERT INTO enviament (id_enviament, data_enviament, estat, notes, id_cv, id_emp
 (34678,'2024-03-10', 'acceptat', 'Incorporacio confirmada', 563, 42189),
 (45789,'2025-01-11', 'enviat', 'Primer contacte', 290, 87213);
 
- --insertar los campos en matriculat que tienen relación con las tablas cicle, alumne y evaluación
+--insertar los campos en matriculat que tienen relación con las tablas cicle, alumne y evaluación
 INSERT INTO matriculat (id_alumne, id_cicle, id_avaluacio) VALUES
 (101, 1023, 1),
 (102, 2154, 2),
@@ -129,3 +129,51 @@ INSERT INTO matriculat (id_alumne, id_cicle, id_avaluacio) VALUES
 (118, 4301, 2),
 (119, 1023, 3),
 (120, 2154, 4);
+
+--creació d'un nou alumne
+INSERT INTO alumne (id_alumne, nom, cognom, dni, nass, telefono, estat_alumne, ra2_ipo, id_empresa) 
+VALUES (121, 'Ruby', 'Gonzales', '12233554Z', '640123456789', '640 123 456', 'actiu', 'aprovat', 27345);
+
+--ejemplo 1 modificar la tabla de matriculat, inserir, actualizar y eliminar
+INSERT INTO matriculat (id_alumne, id_cicle, id_avaluacio)
+VALUES (121, 4301, 5);
+
+UPDATE matriculat
+SET id_avaluacio = 6
+WHERE id_alumne = 121
+AND id_cicle = 4301;
+
+DELETE FROM matriculat
+WHERE id_alumne = 121
+AND id_cicle = 4301;
+
+--ejemplo 2 modificar la tabla de cv, inserir, actualizar y eliminar
+INSERT INTO cv (id_cv, data_creacio, actualitzacio, enllac, estat_cv, id_alumne) 
+VALUES (820, '2025-01-20', NULL, 'https://drive.google.com/drive/cv/raul_update.pdf', 'pendent', 121); 
+
+UPDATE cv 
+SET estat_cv = 'completat' 
+WHERE id_cv = 820; 
+
+/*
+DELETE FROM cv 
+WHERE id_cv = 820;
+*/
+
+-- ejemplo 3 modificar la tabla de enviament, inserir, actualizar y eliminar
+INSERT INTO enviament (id_enviament, data_enviament, estat, notes, id_cv, id_empresa) 
+VALUES (12345, '2025-02-01', 'enviat', 'Candidatura enviada', 820, 27345); 
+
+UPDATE enviament 
+SET estat = 'vist' 
+WHERE id_enviament = 12345; 
+
+DELETE FROM enviament 
+WHERE id_enviament = 12345;
+
+--El DELETE s'elimina al final perquè si s'executa abans d'inserir el canvi de la taula enviament, el CV deixaria d'existir i provocaria un error de la clau forana.
+DELETE FROM cv 
+WHERE id_cv = 820;
+
+--eliminació del nou alumne
+DELETE FROM alumne WHERE id_alumne = 121;
