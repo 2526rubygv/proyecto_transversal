@@ -46,7 +46,7 @@ data_inici DATE ,
 data_fi DATE ,
 tutor_empresa VARCHAR (100) ,
 estat_assignada VARCHAR (40) CHECK (estat_assignada IN ('assignada','no assignada')),
-id_empresa SMALLINT ,
+id_empresa INT ,
 CONSTRAINT empresa_id_empresa_fk FOREIGN KEY (id_empresa) REFERENCES empresa(id_empresa)
 );
 --Taula d'informació de l'alumne.
